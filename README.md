@@ -15,6 +15,7 @@ So overall the following operations took place:
 
 Thus in all we get 3 spans, 1st span is of server-1, 2nd span is from server-1 to server-2 and 3rd span of server 2.
 The opentracing package used is Jaeger.
+
 Jaeger is run via Docker using the following command:
 docker run -d -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp   -p5778:5778 -p16686:16686 -p14268:14268 -p9411:9411 jaegertracing/all-in-one:latest
 
