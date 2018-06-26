@@ -1,7 +1,7 @@
 # opentracing.go
 Implementation of distributed open-tracing using Golang and Jaeger UI
 
-In microservices architectures of modern aplication development, there are more applications communicating with each other than ever before. While application performance monitoring is great for debugging inside a single app, as a system expands into multiple services, how can you understand how much time each service is taking, where the exception happens, and the overall health of your system? In particular, how do you measure network latency between services—such as how long a request takes between one app to another?
+In microservices architectures of modern application development, there are more applications communicating with each other than ever before. While application performance monitoring is great for debugging inside a single app, as a system expands into multiple services, how can you understand how much time each service is taking, where the exception happens, and the overall health of your system? In particular, how do you measure network latency between services—such as how long a request takes between one app to another?
 
 Enter distributed tracing instrumentation. With the higher-level distribution of services that takes place in a cloud-based environment, tracing will become a key part of the cloud infrastructure supporting those services. In OpenTracing, a trace tells the story of a transaction or workflow as it propagates through a distributed system. The concept of the trace borrows a tool from the scientific community called a directed acyclic graph (DAG), which stages the parts of a process from a clear start to a clear end.
 
