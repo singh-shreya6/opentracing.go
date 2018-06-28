@@ -13,7 +13,7 @@ So overall the following operations took place:
 1) A browser makes a request to http://localhost:8082/name
 2) The browser displays Hello name! time is Thu Jun 7 17:18:54 2018
 3) Server 1 sends a POST request to Sever 2 with the name at http://localhost:8081
-4)Server 2 captures this request in response body and displays Hello name!
+4) Server 2 captures this request in response body and displays Hello name!
 
 Thus in all we get 3 spans, 1st span is of server-1, 2nd span is from server-1 to server-2 and 3rd span of server 2. The opentracing package used is Jaeger.
 
