@@ -8,9 +8,12 @@ There are 3 folders in this opentracing package:
 3.	go-opentracing containing opentracing_helper.go
 
 Jaeger UI: Jaeger UI is run via Docker using the following command: 
+
 docker run -d -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p5778:5778 -p16686:16686 -p14268:14268 -p9411:9411 jaegertracing/all-in-one:latest
+
 or it can also be run using:
  docker run -d -p 5775:5775/udp -p 16686:16686 jaegertracing/all-in-one:latest
+ 
 The Jaeger UI runs at http://localhost:16686
 
 Functionality:
@@ -22,6 +25,7 @@ The following operations are taking place.
 4.	Server 2 captures this request in response body and displays Hello name!
 
 Functions in code:
+
 1)	main.go of server 1
 a) func main:
 i)	It calls the opentracing initializer function present in opentracing_helper.go
@@ -47,6 +51,7 @@ v)	It reads the response it gets from server at 8081
 vi)	It prints the name by taking it out of response body
 
 2)	main.go of server 2
+
 a)	func main:
 i)	It initializes opentracing for server 2
 ii)	It creates a server listening at port 8081
@@ -59,6 +64,7 @@ iii)	It takes the name from the request body
 iv)	It displays the name
 
 3)	Opentracing_helper.go
+
 a)	func Init:
 arguments: name of tracer string
 return type: none
