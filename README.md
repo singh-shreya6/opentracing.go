@@ -1,4 +1,5 @@
 opentracing.go
+
 Implementation of distributed open-tracing using Golang and Jaeger UI
 
 In microservices architectures of modern application development, there are more applications communicating with each other than ever before. While application performance monitoring is great for debugging inside a single app, as a system expands into multiple services, how can you understand how much time each service is taking, where the exception happens, and the overall health of your system? In particular, how do you measure network latency between services—such as how long a request takes between one app to another?
@@ -9,10 +10,11 @@ Here I have provided the code for opentracing in a distributed environment where
 
 So overall the following operations took place:
 
-A browser makes a request to http://localhost:8082/name
-The browser displays Hello name! time is Thu Jun 7 17:18:54 2018
-Server 1 sends a POST request to Sever 2 with the name at http://localhost:8081
-Server 2 captures this request in response body and displays Hello name!
+1) A browser makes a request to http://localhost:8082/name
+2) The browser displays Hello name! time is Thu Jun 7 17:18:54 2018
+3) Server 1 sends a POST request to Sever 2 with the name at http://localhost:8081
+4)Server 2 captures this request in response body and displays Hello name!
+
 Thus in all we get 3 spans, 1st span is of server-1, 2nd span is from server-1 to server-2 and 3rd span of server 2. The opentracing package used is Jaeger.
 
 Jaeger is run via Docker using the following command: docker run -d -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p5775:5775/udp -p6831:6831/udp -p6832:6832/udp -p5778:5778 -p16686:16686 -p14268:14268 -p9411:9411 jaegertracing/all-in-one:latest
